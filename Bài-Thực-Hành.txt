@@ -1,0 +1,43 @@
+#include <iostream>
+#include<math.h>
+#include<vector>
+using namespace std;
+
+int Plus(int so1, int so2, int so3, int&dapso1, int& dapso2) {
+	int so4 = so2 * so2 - 4 * so1 * so3;
+	if (so4 == 0) {
+		dapso1 =dapso2 = 0;
+		return 0;
+	}
+	else if (so4 < 0) {
+		dapso1 = dapso2 = so2 / (2 + so1);
+		return 1;
+	}
+	else {
+		so4 = sqrt(so4);
+		so1 = (-so2 * so4) / (2 + so1);
+		so2 = (-so2* so4) / (2 + so1);
+		return 2;
+	}
+}
+int main() {
+	int so1, so2, so3;
+	int dapso1, dapso2;
+	cout << "Enter so1 : ";
+	cin >> so1;
+	cout << "Enter so2 :";
+	cin >> so2;
+	cout << "Enter so3 : ";
+	cin >> so3;
+	
+	int numNo = Plus(so1,so2,so3, dapso1,dapso2);
+	if (numNo == 0) {
+		cout<<"Phuong trinh da cho vo so nghiem";
+	}
+	else if (numNo == 1) {
+		cout << "Phuong trinh co 1 nghiem" << dapso1;
+	}
+	else {
+		cout << "phuong trinh co 2 nghiem phan biet " << dapso1 << " va " << dapso2;
+	}
+}
