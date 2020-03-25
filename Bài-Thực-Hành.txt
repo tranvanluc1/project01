@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 
-int Plus(int so1, int so2, int so3, int&dapso1, int& dapso2) {
+int Plus(int so1, int so2, int so3, int &dapso1, int& dapso2) {
 	int so4 = so2 * so2 - 4 * so1 * so3;
 	if (so4 == 0) {
 		dapso1 =dapso2 = 0;
